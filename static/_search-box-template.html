@@ -1,0 +1,19 @@
+<!-- Site Search -->
+<!-- Add this after the closing </nav> tag and before the closing </div> of the header container -->
+<div class="site-search" role="search">
+    <form id="site-search-form" aria-label="Site Search">
+        <label for="site-search-input" class="screen-reader-text">Search the site</label>
+        <input type="search"
+               id="site-search-input"
+               name="q"
+               placeholder="Search site..."
+               aria-label="Search query"
+               autocomplete="off">
+        <button type="submit" id="site-search-button" aria-label="Search">
+            <span aria-hidden="true">🔍</span>
+        </button>
+    </form>
+</div>
+
+<!-- Also add this before closing </body> tag -->
+<script src="search.js"></script>

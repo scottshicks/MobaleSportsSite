@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MOBALE 2018 Blog Archive - All posts from 2018 organized by month">
+    <title>2018 Archive - MOBALE</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Monthly navigation styles */
+        .month-nav {
+            background: #f8f9fa;
+            border: 2px solid #cc6611;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .month-nav h2 {
+            margin-top: 0;
+            color: #cc6611;
+            font-size: 1.5rem;
+        }
+        .month-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+        }
+        .month-list li {
+            margin: 0;
+        }
+        .month-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 2px solid #cc6611;
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+            color: #cc6611;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .month-link:hover,
+        .month-link:focus {
+            background: #cc6611;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .month-link.has-content {
+            background: #cc6611;
+            color: white;
+        }
+        .month-link.has-content:hover,
+        .month-link.has-content:focus {
+            background: #aa5510;
+        }
+        .month-link.no-content {
+            background: #e9ecef;
+            color: #6c757d;
+            border-color: #dee2e6;
+            cursor: default;
+        }
+        .month-link.no-content:hover,
+        .month-link.no-content:focus {
+            background: #e9ecef;
+            color: #6c757d;
+            transform: none;
+        }
+        .month-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .month-section h2 {
+            color: #cc6611;
+            border-bottom: 3px solid #cc6611;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .post-images {
+            margin: 1.5rem 0;
+        }
+        .post-images figure {
+            margin: 1rem 0;
+        }
+        .post-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .post-images figcaption {
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <div class="container">
+            <div class="site-branding">
+                <h1 class="site-title"><a href="index.html" style="color: white; text-decoration: none;">MOBALE</a></h1>
+                <p class="site-description">Maine Organization for Blind Athletic and Leadership Education</p>
+            </div>
+            <nav id="main-navigation" role="navigation" aria-label="Main Navigation">
+                <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">
+                    <span class="screen-reader-text">Menu</span>
+                    <span class="menu-icon" aria-hidden="true">☰</span>
+                </button>
+                <ul id="primary-menu" class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="blog-archive.html">Archive</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="site-search" role="search">
+                <form id="site-search-form" aria-label="Site Search">
+                    <label for="site-search-input" class="screen-reader-text">Search the site</label>
+                    <input type="search" id="site-search-input" name="q" placeholder="Search site..." aria-label="Search query" autocomplete="off">
+                    <button type="submit" id="site-search-button" aria-label="Search"><span aria-hidden="true">🔍</span></button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <div class="container">
+            <div class="page-header">
+                <h1>2018 Archive</h1>
+                <p class="lead">Browse 2018 posts by month - 7 posts with 13 images</p>
+                <a href="blog-archive.html" class="btn">← Back to All Years</a>
+            </div>
+
+            <!-- Monthly Navigation -->
+            <nav class="month-nav" aria-label="Browse by month">
+                <h2>Browse 2018 by Month</h2>
+                <ul class="month-list">
+                    <li><a href="#january" class="month-link has-content">January (1)</a></li>
+                    <li><span class="month-link no-content">February</span></li>
+                    <li><span class="month-link no-content">March</span></li>
+                    <li><a href="#april" class="month-link has-content">April (1)</a></li>
+                    <li><span class="month-link no-content">May</span></li>
+                    <li><a href="#june" class="month-link has-content">June (3)</a></li>
+                    <li><a href="#july" class="month-link has-content">July (2)</a></li>
+                    <li><span class="month-link no-content">August</span></li>
+                    <li><span class="month-link no-content">September</span></li>
+                    <li><span class="month-link no-content">October</span></li>
+                    <li><span class="month-link no-content">November</span></li>
+                    <li><span class="month-link no-content">December</span></li>
+                </ul>
+            </nav>
+
+            <!-- JANUARY 2018 -->
+            <section id="january" class="month-section">
+                <h2>January 2018 (1 post with 1 image)</h2>
+
+                <article id="winter-camp-2018" class="news-post full-post">
+                    <h3>2018 MOBALE Winter Sports Education Camp</h3>
+                    <time datetime="2018-01-13">Saturday, January 13, 2018</time>
+                    <div class="post-content">
+                        <p class="lead"><strong>****Canceled****</strong></p>
+
+                        <div class="post-images">
+                            <figure>
+                                <img src="images/2018/january_winter_camp_skiers.jpg" alt="Skiers on the mountain at winter sports camp" loading="lazy">
+                                <figcaption>Skiers on the mountain</figcaption>
+                            </figure>
+                        </div>
+
+                        <p>MOBALE is pleased to announce our collaboration with the Adaptive Outdoor Education Center and Maine Adaptive Sports and Recreation NEVIfest program to facilitate 2018 MOBALE Winter Sports Education Camp.</p>
+
+                        <p>There are limited spots, so please fill out BOTH application packets (for MOBALE AND MASR) and get that information back to MOBALE ASAP. Deadline for MOBALE to receive your application packets is February 2, 2018.</p>
+
+                        <h4>How to Submit Packets</h4>
+                        <p>Scan and email: Mobalesports@gmail.com</p>
+                        <p>Or snail mail: 189 Park Ave, Portland, ME 04102</p>
+                        <p>Or fax: 207-774-0679</p>
+
+                        <h4>Tentative Schedule</h4>
+
+                        <h5>Sunday, February 11</h5>
+                        <ul>
+                            <li>4:00 – 5:30 PM: Arrival and check-in with MOBALE at Adaptive Outdoor Education Center (AOEC)</li>
+                            <li>4:30 – 5:45 PM: Check-in with MASR NEVIfest at the Rack</li>
+                            <li>6:00 – 7:00 PM: NEVIfest welcome and Pizza Party at the Rack</li>
+                            <li>7:15 – 8:15 PM: MOBALE balance class/pretest</li>
+                            <li>8:30 – 9:00 PM: MOBALE athletes meeting at AOEC</li>
+                            <li>9:00 – 9:30 PM: Shower/prepare for bed</li>
+                            <li>9:30 – 10:00 PM: Staff meeting</li>
+                            <li>10:00 PM: Lights out</li>
+                        </ul>
+
+                        <h5>Monday, February 12</h5>
+                        <ul>
+                            <li>8:00 – 9:30 AM: Continental breakfast at the Lodge</li>
+                            <li>9:30 AM – 12:00 PM: NEVIfest ski instruction</li>
+                            <li>12:00 – 1:00 PM: Lunch provided by MOBALE</li>
+                            <li>1:00 – 3:00 PM: NEVIfest ski instruction</li>
+                            <li>4:00 – 5:30 PM: Bowling at the Sugar Bowl in Carrabassett Valley</li>
+                            <li>6:00 – 7:00 PM: Supper at AOEC</li>
+                            <li>7:15 – 8:45 PM: Nutrition seminar</li>
+                            <li>9:00 – 9:30 PM: MOBALE athletes meeting</li>
+                            <li>9:30 – 10:00 PM: Shower/prepare for bed</li>
+                            <li>9:30 – 10:00 PM: MOBALE staff meeting</li>
+                            <li>10:00 PM: Lights out</li>
+                        </ul>
+
+                        <h5>Tuesday, February 13</h5>
+                        <ul>
+                            <li>8:00 – 9:30 AM: Continental breakfast at the Lodge</li>
+                            <li>9:30 AM – 12:00 PM: NEVIfest ski instruction</li>
+                            <li>12:00 – 1:00 PM: Lunch provided by MOBALE at AOEC</li>
+                            <li>1:00 – 3:00 PM: Nordic ski instruction/Snowshoeing</li>
+                            <li>4:00 – 5:30 PM: Ice skating instruction</li>
+                            <li>6:00 – 7:00 PM: Supper at AOEC</li>
+                            <li>7:15 – 8:45 PM: Activity and post test</li>
+                            <li>9:00 – 9:30 PM: MOBALE athletes meeting</li>
+                            <li>9:30 – 10:00 PM: Shower/prepare for bed</li>
+                            <li>9:30 – 10:00 PM: Staff meeting</li>
+                            <li>10:00 PM: Lights out</li>
+                        </ul>
+
+                        <h5>Wednesday, February 14</h5>
+                        <ul>
+                            <li>8:00 – 9:30 AM: Continental Breakfast available in the Lodge</li>
+                            <li>9:15 AM: NEVIfest Group Photo</li>
+                            <li>10:00 AM – 12:00 PM: Crothers Challenge and Ski Clinics</li>
+                            <li>12:00 – 1:00 PM: MOBALE awards party and farewell</li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+
+            <!-- APRIL 2018 -->
+            <section id="april" class="month-section">
+                <h2>April 2018 (1 post with 1 image)</h2>
+
+                <article id="spring-newsletter-2018" class="news-post full-post">
+                    <h3>Spring MOBALE Newsletter!</h3>
+                    <time datetime="2018-04-21">Saturday, April 21, 2018</time>
+                    <div class="post-content">
+                        <h4>PLANS UNDERWAY FOR 2018 SUMMER SPORTS EDUCATION CAMP - June 20-23!</h4>
+
+                        <div class="post-images">
+                            <figure>
+                                <img src="images/2018/april_newsletter_wrestling.jpg" alt="Sports camp students wrestling on mats" loading="lazy">
+                                <figcaption>Sports camp students wrestling on mats</figcaption>
+                            </figure>
+                        </div>
+
+                        <p>Despite a snowy March, the MOBALE board is preparing for the 2018 Summer Sports Education Camp (SEC) in Waterville, Maine at Camp Tracy and the Alfond Center from June 20-23. The camp will offer sports including:</p>
+                        <ul>
+                            <li>Beep baseball</li>
+                            <li>Archery</li>
+                            <li>Wrestling</li>
+                            <li>Swimming</li>
+                            <li>Gymnastics</li>
+                            <li>Martial arts</li>
+                            <li>Rock climbing</li>
+                            <li>Bowling</li>
+                            <li>Track and field</li>
+                            <li>Goal ball</li>
+                            <li>Potential addition of soccer</li>
+                        </ul>
+
+                        <p>The camp is free for visually impaired youth in grades 3-12 and provides a unique opportunity for participants to engage in adapted sports.</p>
+
+                        <h4>Donation Breakdown</h4>
+                        <ul>
+                            <li>$15: Camp tee shirt</li>
+                            <li>$15: A night of bowling</li>
+                            <li>$25: Goalball goggles</li>
+                            <li>$20: Soccer ball with bells</li>
+                            <li>$13: Elbow pads</li>
+                            <li>$15: Knee pads</li>
+                        </ul>
+
+                        <h4>Donation Methods</h4>
+                        <ul>
+                            <li>PayPal: https://www.paypal.me/MobaleT</li>
+                            <li>Dick's Sporting Goods gift card to: MOBALE SPORTS, 225 Chase St, Readfield, MAINE 04355</li>
+                        </ul>
+
+                        <h4>Volunteer Spotlight: Cheryl Gannon</h4>
+                        <p>Cheryl Gannon, 2016 Volunteer of the Year, shared her experience: "I can't think of many more things in life better than seeing a smile on a kid's face." She emphasized the camp's importance in providing physical and social opportunities for visually impaired students.</p>
+
+                        <h4>Contact Information</h4>
+                        <ul>
+                            <li>Website: www.mobale.org</li>
+                            <li>Facebook: https://www.facebook.com/MOBALEMaine/</li>
+                            <li>Email: Mobalesports@gmail.com</li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+
+            <!-- JUNE 2018 -->
+            <section id="june" class="month-section">
+                <h2>June 2018 (3 posts with 10 images)</h2>
+
+                <article id="day-one" class="news-post full-post">
+                    <h3>Summer Sports Camp Day One!</h3>
+                    <time datetime="2018-06-21">Thursday, June 21, 2018</time>
+                    <div class="post-content">
+                        <p>After the motion class, where athletes learn the basic dynamic of movement, we took off for archery! Athletes followed instructions of Camp Tracy Staff and had the opportunity to try adaptations.</p>
+
+                        <div class="post-images">
+                            <figure>
+                                <img src="images/2018/june_day1_archery.jpg" alt="Athlete with bow during archery lesson" loading="lazy">
+                                <figcaption>Athlete with bow during archery lesson</figcaption>
+                            </figure>
+                        </div>
+
+                        <p>A big first this year, soccer! All athletes enjoyed learning new skills lead by James Howard, from DBVI.</p>
+
+                        <div class="post-images">
+                            <figure>
+                                <img src="images/2018/june_day1_soccer.jpeg" alt="James Howard from DBVI teaching students soccer" loading="lazy">
+                                <figcaption>James Howard from DBVI teaching students soccer</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="day-two-highlights" class="news-post full-post">
+                    <h3>MOBALE Sports Camp Day Two Highlights</h3>
+                    <time datetime="2018-06-21">Thursday, June 21, 2018</time>
+                    <div class="post-content">
+                        <p>"Today has been a fun filled day with track and field events, goalball, swimming, gymnastics, rock climbing, wrestling and bowling!</p>
+                        <p>We've been lucky enough to have great weather for all events!"</p>
+
+                        <div class="post-images">
+                            <figure>
+                                <img src="images/2018/june_day2_goalball.jpg" alt="Dr. John McMahon explaining goal ball to athletes in the gym" loading="lazy">
+                                <figcaption>Dr. John McMahon explaining goal ball to athletes in the gym</figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="images/2018/june_day2_long_jump.jpg" alt="Two athletes preparing for long jump practice" loading="lazy">
+                                <figcaption>Two athletes preparing for long jump practice</figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="images/2018/june_day2_track_running.jpg" alt="Athlete on the track running with a guide" loading="lazy">
+                                <figcaption>Athlete on the track running with a guide</figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="images/2018/june_day2_discus_athletes.jpg" alt="Athletes at the discus coached by Dr. John McMahon" loading="lazy">
+                                <figcaption>Athletes at the discus coached by Dr. John McMahon</figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="images/2018/june_day2_discus_grip.jpg" alt="Dr. John McMahon coaching athlete on discus grip" loading="lazy">
+                                <figcaption>Dr. John McMahon coaching athlete on discus grip</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="day-two-highlights-2" class="news-post full-post">
+                    <h3>Day Two, More Highlights!!</h3>
+                    <time datetime="2018-06-21">Thursday, June 21, 2018</time>
+                    <div class="post-content">
+                        <div class="post-images">
+                            <figure>
+                                <img src="images/2018/june_day2_gymnastics_rope.jpg" alt="Athletes Tyler and Ayden observe as Davaugh climbs rope in gymnastics with staff" loading="lazy">
+                                <figcaption>Athletes Tyler and Ayden observe as Davaugh climbs rope in gymnastics with staff</figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="images/2018/june_day2_gymnastics_flip.jpg" alt="Ayden flips onto mat" loading="lazy">
+                                <figcaption>Ayden flips onto mat!</figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="images/2018/june_day2_swimming.jpg" alt="Athletes Donovan and Carter demonstrate the use of adaptations in swimming races followed by instructor Kim Stumph" loading="lazy">
+                                <figcaption>Athletes Donovan and Carter demonstrate the use of adaptations in swimming races followed by instructor Kim Stumph</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- JULY 2018 -->
+            <section id="july" class="month-section">
+                <h2>July 2018 (2 posts with 1 image)</h2>
+
+                <article id="david-peralta" class="news-post full-post">
+                    <h3>David Peralta Blind Soccer Player</h3>
+                    <time datetime="2018-07-15">Sunday, July 15, 2018</time>
+                    <div class="post-content">
+                        <p>Interview with Argentina's soccer player David Peralta, a forward, who lost his vision at age 5.</p>
+                        <p><a href="http://www.euronews.com/2018/06/22/blind-soccer-player-goes-for-gold-with-argentine-team" target="_blank" rel="noopener">Read the full interview on Euronews</a></p>
+                    </div>
+                </article>
+
+                <article id="james-howard-vrc" class="news-post full-post">
+                    <h3>James Howard Vocational Rehabilitation Counselor (VRC)</h3>
+                    <time datetime="2018-07-23">Monday, July 23, 2018</time>
+                    <div class="post-content">
+                        <div class="post-images">
+                            <figure>
+                                <img src="images/2018/july_james_howard_vrc.jpg" alt="James Howard, Vocational Rehabilitation Counselor" loading="lazy">
+                                <figcaption>James Howard VRC</figcaption>
+                            </figure>
+                        </div>
+
+                        <p>James first realized his calling to support people with disabilities while working as a nursing aide in a summer employment opportunity, while studying Business Law BA Hons at the University of Stirling in Scotland.</p>
+
+                        <p>"Working in a nursing home I was honestly shocked at the lack of empathy and compassion from some staff. The quality of care was not what I was expecting. At that moment, I realized that individuals disadvantaged and marginalized needed strong advocacy and support."</p>
+
+                        <p>Originally from the UK, James migrated to Maine in 2001. After moving to Maine James worked for a profit and non-profit organization. The dream job as a Vocational Rehabilitation Counselor (VRC) came along in 2006 with the State of Maine – and has worked as a VRC ever since.</p>
+
+                        <p>"I love my job because I meet such fantastic people that have gone, or going through significant adversity with loss of vision. I'm afforded the opportunity to support individuals gain greater levels of independence, particularly achieving successful employment outcomes."</p>
+
+                        <p>James started working with individuals who are blind and visually impaired (BVI) in June 2015. James takes a holistic approach to rehabilitation counseling. "I look at the whole picture of the individual. I look at the social situation, financial, housing issues, transportation barriers, and level of blind rehab skill needs".</p>
+
+                        <p>"Some individuals with vision loss may not have had positive employment opportunities. I help coordinate blind rehab skill service delivery to support the individual with employment and independent living needs"</p>
+
+                        <p>"The benefits of employment whether its 2 hours a week, or 40 hours a week is significant for an individual and improves their self-worth, self-esteem, and empowers greater levels of independence."</p>
+                    </div>
+                </article>
+            </section>
+
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 MOBALE - Maine Organization for Blind Athletic and Leadership Education. All rights reserved.</p>
+            <p>Empowering visually impaired youth through sports and leadership education.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>
