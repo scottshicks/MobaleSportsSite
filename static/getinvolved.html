@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact MOBALE - Get involved as an athlete, volunteer, or supporter">
-    <title>Contact Us - MOBALE</title>
+    <meta name="description" content="Get involved with MOBALE - Join as an athlete, volunteer, donor, or partner organization">
+    <title>Get Involved - MOBALE</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="dropdown-navigation.css">
 </head>
@@ -16,9 +16,16 @@
     <!-- Header -->
     <header role="banner">
         <div class="container">
-            <div class="site-branding">
-                <h1 class="site-title"><a href="index.html" style="color: white; text-decoration: none;">MOBALE</a></h1>
-                <p class="site-description">Maine Organization for Blind Athletic and Leadership Education</p>
+            <div class="header-content">
+                <div class="site-branding">
+                    <h1 class="site-title"><a href="index.html" style="color: white; text-decoration: none;">MOBALE</a></h1>
+                    <p class="site-description">Maine Organization for Blind Athletic and Leadership Education</p>
+                </div>
+                <div class="site-logo">
+                    <a href="index.html">
+                        <img src="images/mobale-logo.png" alt="MOBALE Logo" class="logo-image">
+                    </a>
+                </div>
             </div>
 
             <nav id="main-navigation" role="navigation" aria-label="Main Navigation">
@@ -80,7 +87,20 @@
                     </li>
 
                     <li><a href="archive/archive-main.html">Archive</a></li>
-                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+
+                    <!-- GET INVOLVED with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="getinvolved.html" aria-current="page">Get Involved</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="getinvolved.html#athletes">Athletes</a></li>
+                            <li><a href="getinvolved.html#volunteers">Volunteers</a></li>
+                            <li><a href="getinvolved.html#donors">Donors & Supporters</a></li>
+                            <li><a href="getinvolved.html#partners">Organizations & Partners</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="getinvolved.html#contact">Contact Us</a></li>
                 </ul>
             </nav>
 
@@ -141,6 +161,7 @@
                                 <li>Peer connections and mentorship</li>
                                 <li>Fun, supportive, and challenging environment</li>
                             </ul>
+                            <p></p>
                             <p>Use the contact form below to learn more about registration, eligibility, and what to expect.</p>
                         </article>
 
@@ -154,6 +175,7 @@
                                 <li><strong>Junior Counselors</strong> - Former participants who mentor new athletes</li>
                                 <li><strong>Support Staff</strong> - Help with logistics, meals, and operations</li>
                             </ul>
+                            <p></p>
                             <p>Contact us to learn more about volunteer opportunities and requirements.</p>
                         </article>
 
@@ -168,6 +190,7 @@
                                 <li>Professional coaching and instruction</li>
                                 <li>Camp supplies and materials</li>
                             </ul>
+                            <p></p>
                             <p>Contact us to discuss donation opportunities and how your support can make a difference.</p>
                         </article>
 
@@ -182,12 +205,13 @@
                                 <li>Financial and in-kind support</li>
                                 <li>Program development and collaboration</li>
                             </ul>
+                            <p></p>
                             <p>Let's work together to create more opportunities for visually impaired athletes!</p>
                         </article>
                     </div>
                 </section>
 
-                <section class="content-section">
+                <section class="content-section" id="contact">
                     <h2>Contact Form</h2>
                     <p>Please fill out the form below and we'll get back to you as soon as possible. If you prefer, you can also reach us through the contact information listed at the bottom of this page.</p>
 
@@ -236,25 +260,8 @@
                 </section>
 
                 <section class="content-section">
-                    <h2>Frequently Asked Questions</h2>
-
-                    <h3>Who is eligible to participate in MOBALE programs?</h3>
-                    <p>MOBALE serves blind and visually impaired youth primarily from Maine, though we welcome athletes from surrounding states. Age ranges and specific eligibility details vary by program - contact us for more information.</p>
-
-                    <h3>How much does it cost to attend camp?</h3>
-                    <p>We strive to keep our programs accessible and offer financial assistance when needed. Contact us to discuss fees and available scholarships.</p>
-
-                    <h3>Do volunteers need experience working with visually impaired individuals?</h3>
-                    <p>No previous experience is required! We provide training and support for all volunteers. What matters most is enthusiasm, patience, and a commitment to MOBALE's mission.</p>
-
-                    <h3>When is the next Summer Sports Education Camp?</h3>
-                    <p>Our camp typically takes place in June each year. Registration information is usually available in early spring. Contact us to be added to our mailing list for updates.</p>
-
-                    <h3>Can family members attend camp?</h3>
-                    <p>Our camp is designed as a residential experience for athletes to build independence and peer connections. Family involvement varies by program - contact us for specific details.</p>
-
-                    <h3>What if my child has never played sports before?</h3>
-                    <p>That's perfectly fine! MOBALE welcomes athletes of all skill levels, from complete beginners to experienced competitors. Our program focuses on skill development, confidence building, and having fun.</p>
+                    <h2>Have Questions?</h2>
+                    <p>Check out our <a href="faq.html">Frequently Asked Questions page</a> for answers to common questions about participation, volunteering, and our programs.</p>
                 </section>
             </article>
         </div>
