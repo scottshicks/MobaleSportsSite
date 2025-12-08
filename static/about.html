@@ -6,6 +6,7 @@
     <meta name="description" content="About MOBALE - Maine Organization for Blind Athletic and Leadership Education">
     <title>About MOBALE - Maine Organization for Blind Athletic and Leadership Education</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dropdown-navigation.css">
 </head>
 <body>
     <!-- Skip Links for Accessibility -->
@@ -27,10 +28,57 @@
                 </button>
                 <ul id="primary-menu" class="nav-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" aria-current="page">About</a></li>
-                    <li><a href="programs.html">Programs</a></li>
-                    <li><a href="sports.html">Sports</a></li>
-                    <li><a href="news.html">News</a></li>
+
+                    <!-- ABOUT with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="about.html" aria-current="page">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html#mission">Our Mission</a></li>
+                            <li><a href="about.html#what-we-do">What We Do</a></li>
+                            <li><a href="about.html#impact">Our Impact</a></li>
+                            <li><a href="about.html#team">Our Team</a></li>
+                            <li><a href="about.html#partners">Partners & Supporters</a></li>
+                            <li><a href="about.html#get-involved">Get Involved</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- PROGRAMS with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="programs.html">Programs</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="programs.html#summer-camp">Summer Sports Camp</a></li>
+                            <li><a href="programs.html#camp-highlights">Camp Highlights</a></li>
+                            <li><a href="programs.html#camp-activities">Camp Activities</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- SPORTS with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="sports.html">Sports</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sports.html#goalball">Goalball</a></li>
+                            <li><a href="sports.html#wrestling">Wrestling</a></li>
+                            <li><a href="sports.html#swimming">Swimming</a></li>
+                            <li><a href="sports.html#track-field">Track & Field</a></li>
+                            <li><a href="sports.html#disc-golf">Disc Golf</a></li>
+                            <li><a href="sports.html#archery">Archery</a></li>
+                            <li><a href="sports.html#rock-climbing">Rock Climbing</a></li>
+                            <li><a href="sports.html#tandem-biking">Tandem Biking</a></li>
+                            <li><a href="sports.html#soccer-kickball">Soccer & Kickball</a></li>
+                            <li><a href="sports.html#yoga-fitness">Yoga & Fitness</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- NEWS with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="news.html">News</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="news.html#camp-2025-review">2025 Camp Review</a></li>
+                            <li><a href="news.html#awards-2025">2025 Award Winners</a></li>
+                            <li><a href="news.html#photos-2024">2024 Camp Photos</a></li>
+                        </ul>
+                    </li>
+
                     <li><a href="archive/archive-main.html">Archive</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -84,12 +132,12 @@
                 <h1>About MOBALE</h1>
 
                 <section class="content-section">
-                    <h2>Our Mission</h2>
+                    <h2 id="mission">Our Mission</h2>
                     <p>The Maine Organization for Blind Athletic and Leadership Education (MOBALE) is dedicated to promoting sports and leadership opportunities for visually impaired youth throughout Maine and the surrounding region. Through our annual Summer Sports Education Camp and year-round programs, we empower young athletes to develop skills, confidence, and leadership abilities that extend far beyond the playing field.</p>
                 </section>
 
                 <section class="content-section">
-                    <h2>What We Do</h2>
+                    <h2 id="what-we-do">What We Do</h2>
                     <p>MOBALE provides comprehensive sports education and leadership development programs specifically designed for blind and visually impaired youth. Our programs include:</p>
                     <ul>
                         <li><strong>Summer Sports Education Camp:</strong> Our flagship annual program bringing together athletes for intensive multi-sport training</li>
@@ -101,7 +149,7 @@
                 </section>
 
                 <section class="content-section">
-                    <h2>Our Impact</h2>
+                    <h2 id="impact">Our Impact</h2>
                     <p>Since our founding, MOBALE has served dozens of visually impaired youth from across Maine and New Hampshire, providing life-changing experiences through sports and leadership education. Our participants have:</p>
                     <ul>
                         <li>Developed confidence and independence through athletic achievement</li>
@@ -113,7 +161,7 @@
                 </section>
 
                 <section class="content-section">
-                    <h2>Our Team</h2>
+                    <h2 id="team">Our Team</h2>
                     <p>MOBALE is powered by a dedicated team of volunteers, coaches, counselors, and community partners who share our passion for empowering visually impaired youth. Our team includes:</p>
                     <ul>
                         <li><strong>Volunteer Counselors:</strong> Experienced mentors who provide guidance and support throughout camp</li>
@@ -125,7 +173,7 @@
                 </section>
 
                 <section class="content-section">
-                    <h2>Partners & Supporters</h2>
+                    <h2 id="partners">Partners & Supporters</h2>
                     <p>MOBALE's success is made possible through partnerships with organizations dedicated to serving the blind and visually impaired community, including:</p>
                     <ul>
                         <li>Alfond Youth & Community Center (2025 Organization of the Year)</li>
@@ -137,7 +185,7 @@
                 </section>
 
                 <section class="content-section">
-                    <h2>Get Involved</h2>
+                    <h2 id="get-involved">Get Involved</h2>
                     <p>There are many ways to support MOBALE's mission:</p>
                     <ul>
                         <li><strong>Athletes:</strong> If you're a visually impaired youth interested in sports and leadership, we'd love to have you join us!</li>

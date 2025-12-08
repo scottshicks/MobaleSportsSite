@@ -1,0 +1,203 @@
+/* ==========================================
+   DROPDOWN NAVIGATION STYLES
+   ========================================== */
+
+/* Main navigation container */
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-menu > li {
+    position: relative;
+}
+
+.nav-menu > li > a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    border-radius: 4px;
+}
+
+.nav-menu > li > a:hover,
+.nav-menu > li > a:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dropdown menu container */
+.nav-menu li.has-dropdown {
+    position: relative;
+}
+
+/* Dropdown toggle indicator */
+.nav-menu .has-dropdown > a::after {
+    content: " ▼";
+    font-size: 0.7em;
+    margin-left: 0.3em;
+    transition: transform 0.2s;
+}
+
+.nav-menu .has-dropdown:hover > a::after,
+.nav-menu .has-dropdown:focus-within > a::after {
+    transform: rotate(180deg);
+}
+
+/* Dropdown submenu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 0;
+    margin-top: 0.25rem;
+    list-style: none;
+    z-index: 1000;
+
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+}
+
+/* Show dropdown on hover or focus */
+.has-dropdown:hover > .dropdown-menu,
+.has-dropdown:focus-within > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown menu items */
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.6rem 1.25rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.15s, padding-left 0.15s;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-left-color: var(--secondary-color);
+    padding-left: 1.5rem;
+}
+
+/* Active/current page indicator in dropdown */
+.dropdown-menu a[aria-current="page"] {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+    border-left-color: var(--secondary-color);
+}
+
+/* Keyboard accessibility - focus visible */
+.nav-menu a:focus-visible {
+    outline: 3px solid var(--focus-color, #0066cc);
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* Stack navigation vertically on mobile */
+    .nav-menu {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-menu > li {
+        width: 100%;
+    }
+
+    .nav-menu > li > a {
+        padding: 1rem;
+        border-radius: 0;
+    }
+
+    /* Mobile dropdown positioning */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.2);
+        margin: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    /* Show dropdown when parent is hovered/focused/expanded */
+    .has-dropdown:hover > .dropdown-menu,
+    .has-dropdown:focus-within > .dropdown-menu,
+    .has-dropdown.expanded > .dropdown-menu {
+        max-height: 500px;
+        transition: max-height 0.4s ease-in;
+    }
+
+    .dropdown-menu a {
+        padding: 0.75rem 1rem 0.75rem 2rem;
+        font-size: 0.9rem;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a:focus {
+        padding-left: 2.25rem;
+    }
+
+    /* Remove arrow rotation on mobile */
+    .nav-menu .has-dropdown > a::after {
+        content: " ▼";
+        float: right;
+        margin-left: auto;
+    }
+}
+
+/* ==========================================
+   REDUCED MOTION SUPPORT
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .dropdown-menu,
+    .nav-menu a,
+    .nav-menu .has-dropdown > a::after {
+        transition: none;
+    }
+}
+
+/* ==========================================
+   HIGH CONTRAST MODE
+   ========================================== */
+
+@media (prefers-contrast: high) {
+    .dropdown-menu {
+        border: 2px solid white;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a:focus {
+        background-color: white;
+        color: black;
+    }
+}

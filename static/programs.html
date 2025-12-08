@@ -6,6 +6,7 @@
     <meta name="description" content="MOBALE Programs - Summer Sports Education Camp and year-round opportunities">
     <title>Programs - MOBALE</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dropdown-navigation.css">
 </head>
 <body>
     <!-- Skip Links for Accessibility -->
@@ -27,10 +28,57 @@
                 </button>
                 <ul id="primary-menu" class="nav-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="programs.html" aria-current="page">Programs</a></li>
-                    <li><a href="sports.html">Sports</a></li>
-                    <li><a href="news.html">News</a></li>
+
+                    <!-- ABOUT with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="about.html">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html#mission">Our Mission</a></li>
+                            <li><a href="about.html#what-we-do">What We Do</a></li>
+                            <li><a href="about.html#impact">Our Impact</a></li>
+                            <li><a href="about.html#team">Our Team</a></li>
+                            <li><a href="about.html#partners">Partners & Supporters</a></li>
+                            <li><a href="about.html#get-involved">Get Involved</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- PROGRAMS with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="programs.html" aria-current="page">Programs</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="programs.html#summer-camp">Summer Sports Camp</a></li>
+                            <li><a href="programs.html#camp-highlights">Camp Highlights</a></li>
+                            <li><a href="programs.html#camp-activities">Camp Activities</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- SPORTS with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="sports.html">Sports</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sports.html#goalball">Goalball</a></li>
+                            <li><a href="sports.html#wrestling">Wrestling</a></li>
+                            <li><a href="sports.html#swimming">Swimming</a></li>
+                            <li><a href="sports.html#track-field">Track & Field</a></li>
+                            <li><a href="sports.html#disc-golf">Disc Golf</a></li>
+                            <li><a href="sports.html#archery">Archery</a></li>
+                            <li><a href="sports.html#rock-climbing">Rock Climbing</a></li>
+                            <li><a href="sports.html#tandem-biking">Tandem Biking</a></li>
+                            <li><a href="sports.html#soccer-kickball">Soccer & Kickball</a></li>
+                            <li><a href="sports.html#yoga-fitness">Yoga & Fitness</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- NEWS with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="news.html">News</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="news.html#camp-2025-review">2025 Camp Review</a></li>
+                            <li><a href="news.html#awards-2025">2025 Award Winners</a></li>
+                            <li><a href="news.html#photos-2024">2024 Camp Photos</a></li>
+                        </ul>
+                    </li>
+
                     <li><a href="archive/archive-main.html">Archive</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -77,7 +125,7 @@
                 <h1>Our Programs</h1>
 
                 <section class="content-section highlight-box">
-                    <h2>Summer Sports Education Camp</h2>
+                    <h2 id="summer-camp">Summer Sports Education Camp</h2>
                     <p class="lead">Our flagship annual program brings together blind and visually impaired youth for an unforgettable week of sports, leadership, and community building.</p>
 
                     <h3>Camp Overview</h3>
@@ -94,7 +142,7 @@
                 </section>
 
                 <section class="content-section">
-                    <h2>2025 Camp Highlights</h2>
+                    <h2 id="camp-highlights">2025 Camp Highlights</h2>
                     <p>The 2025 Summer Sports Education Camp took place June 18-21, 2025, and featured:</p>
                     <ul>
                         <li><strong>8 Athletes</strong> from Maine and New Hampshire</li>
@@ -107,7 +155,7 @@
                 </section>
 
                 <section class="content-section">
-                    <h2>Camp Sports & Activities</h2>
+                    <h2 id="camp-activities">Camp Sports & Activities</h2>
                     <div class="sports-container">
                         <article class="sport-card">
                             <h3>Goalball</h3>
