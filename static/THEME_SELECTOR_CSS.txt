@@ -1,0 +1,56 @@
+/* ===================================
+   ADD THIS TO styles.css
+   Place this in the Header section (around line 200-300)
+   =================================== */
+
+/* Theme Selector Styling */
+.theme-selector-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.theme-label {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+#theme-selector {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    font-family: var(--font-family);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 180px;
+}
+
+#theme-selector:hover {
+    background-color: white;
+    border-color: var(--secondary-color);
+}
+
+#theme-selector:focus {
+    outline: 3px solid white;
+    outline-offset: 2px;
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
+    .theme-selector-wrapper {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    #theme-selector {
+        width: 100%;
+        max-width: 300px;
+    }
+}

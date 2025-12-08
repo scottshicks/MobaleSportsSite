@@ -10,7 +10,7 @@ The historical blog content from mobalesports.blogspot.com (2015-2025) is now or
 
 ### 📄 New Files Created
 
-1. **blog-archive.html** - Main archive page with year-by-year navigation
+1. **../archive/archive-main.html** - Main archive page with year-by-year navigation
 2. **archive-nav.js** - JavaScript for filtering posts by year
 3. **BLOG_MIGRATION_GUIDE.md** - Detailed guide for migrating remaining posts
 4. **ARCHIVE_SUMMARY.md** - This file
@@ -50,8 +50,8 @@ The historical blog content from mobalesports.blogspot.com (2015-2025) is now or
 
 ### Direct URL
 
-- Archive page: `blog-archive.html`
-- Specific year: `blog-archive.html#year-2019`
+- Archive page: `../archive/archive-main.html`
+- Specific year: `../archive/archive-main.html#year-2019`
 
 ## Features
 
@@ -171,7 +171,7 @@ To fully migrate all 28 remaining posts:
 
 ```
 MobaleSports/
-├── blog-archive.html          # Main archive page
+├── ../archive/archive-main.html          # Main archive page
 ├── archive-nav.js             # Year navigation JS
 ├── news.html                  # Latest news (with archive link)
 ├── BLOG_MIGRATION_GUIDE.md    # Migration instructions
@@ -207,14 +207,14 @@ MobaleSports/
 
 ### Adding New Posts
 
-1. Add post to `blog-archive.html` in appropriate year section
+1. Add post to `../archive/archive-main.html` in appropriate year section
 2. Add entry to `search.js` for searchability
 3. Update post count in year navigation
 4. Test year filter and links
 
 ### Updating Existing Posts
 
-1. Edit content in `blog-archive.html` or linked pages
+1. Edit content in `../archive/archive-main.html` or linked pages
 2. Update search index if title/content changes
 3. Verify links still work
 4. Test on mobile devices

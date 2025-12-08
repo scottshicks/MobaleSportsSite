@@ -147,6 +147,14 @@ header .container {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Search and Theme Selector on same row */
+.site-search,
+.theme-selector-wrapper {
+    flex-shrink: 0;
+    align-self: center;
 }
 
 .site-branding {
@@ -232,6 +240,61 @@ nav {
 
     .nav-menu a {
         padding: 1rem;
+    }
+}
+
+/* ===================================
+   Theme Selector
+   =================================== */
+
+.theme-selector-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+
+.theme-label {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+#theme-selector {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    font-family: var(--font-family);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 180px;
+}
+
+#theme-selector:hover {
+    background-color: white;
+    border-color: var(--secondary-color);
+}
+
+#theme-selector:focus {
+    outline: 3px solid white;
+    outline-offset: 2px;
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
+    .theme-selector-wrapper {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    #theme-selector {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
@@ -487,6 +550,7 @@ footer p {
 /* Page Content */
 .page-content {
     max-width: 900px;
+    padding-top:30px;
 }
 
 .lead {
@@ -608,9 +672,11 @@ nav a[aria-current="page"] {
    Site Search
    =================================== */
 
+/* Search and Theme Selector Row */
 .site-search {
-    margin-top: 1rem;
-    width: 100%;
+    width: auto;
+    flex: 1;
+    max-width: 400px;
 }
 
 .site-search form {
@@ -769,6 +835,11 @@ nav a[aria-current="page"] {
     margin-bottom: 2rem;
     flex-wrap: wrap;
     gap: 1rem;
+    padding-top: 30px;
+}
+
+.main-content {
+    padding-top: 30px;
 }
 
 .page-header h1 {

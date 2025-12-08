@@ -45,7 +45,7 @@ For each post, gather:
 
 ### Step 3: Add to Archive Page
 
-Edit `blog-archive.html` and add the post to the appropriate year section:
+Edit `../archive/archive-main.html` and add the post to the appropriate year section:
 
 ```html
 <article class="archive-post">
@@ -151,7 +151,7 @@ Edit `search.js` and add entries for each migrated post to the `searchIndex` arr
    curl -o images/2019-spring-newsletter.jpg "https://blogger.googleusercontent.com/..."
    ```
 
-4. **Add to blog-archive.html**:
+4. **Add to ../archive/archive-main.html**:
    - Find the appropriate year section
    - Add the `<article class="archive-post">` block
    - Include title, date, summary
@@ -172,7 +172,7 @@ Edit `search.js` and add entries for each migrated post to the `searchIndex` arr
    ```
 
 7. **Test**:
-   - Open blog-archive.html
+   - Open ../archive/archive-main.html
    - Click year link
    - Verify post displays
    - Test "Read Full Post" link

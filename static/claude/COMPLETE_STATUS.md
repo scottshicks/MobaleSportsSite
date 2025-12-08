@@ -18,7 +18,7 @@
 - ✅ Searches all content (titles, keywords, text)
 
 ### 3. **Blog Archive System**
-- ✅ Archive page created (blog-archive.html)
+- ✅ Archive page created (../archive/archive-main.html)
 - ✅ Year navigation (2015-2025)
 - ✅ JavaScript filtering by year
 - ✅ 34 posts catalogued:
@@ -64,7 +64,7 @@
 ## 📊 Statistics
 
 ### Pages
-- **8 HTML pages:** index, about, programs, sports, news, contact, blog-archive, search-results
+- **8 HTML pages:** index, about, programs, sports, news, contact, ../archive/archive-main, search-results
 - **All pages:** Fully functional with navigation, search, and accessibility
 
 ### Content
@@ -112,7 +112,7 @@ MobaleSports/
 ├── sports.html                     ✅ Complete (10+ sports)
 ├── news.html                       ✅ Complete with 2020-2025 posts
 ├── contact.html                    ✅ Complete with form
-├── blog-archive.html               ✅ Complete with year navigation
+├── ../archive/archive-main.html               ✅ Complete with year navigation
 ├── search-results.html             ✅ Complete with search functionality
 ├── styles.css                      ✅ Complete with all features
 ├── script.js                       ✅ Complete with menu/form
@@ -172,7 +172,7 @@ MobaleSports/
 **To migrate a blog post:**
 1. Follow BLOG_MIGRATION_GUIDE.md
 2. Copy content from original blog
-3. Add to blog-archive.html or create year page
+3. Add to ../archive/archive-main.html or create year page
 4. Update search index in search.js
 5. Test navigation and links
 

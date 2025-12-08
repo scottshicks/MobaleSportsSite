@@ -31,7 +31,7 @@
                     <li><a href="programs.html">Programs</a></li>
                     <li><a href="sports.html">Sports</a></li>
                     <li><a href="news.html">News</a></li>
-                    <li><a href="blog-archive.html">Archive</a></li>
+                    <li><a href="archive/archive-main.html">Archive</a></li>
                     <li><a href="contact.html" aria-current="page">Contact</a></li>
                 </ul>
             </nav>
@@ -43,6 +43,29 @@
                     <input type="search" id="site-search-input" name="q" placeholder="Search site..." aria-label="Search query" autocomplete="off">
                     <button type="submit" id="site-search-button" aria-label="Search"><span aria-hidden="true">🔍</span></button>
                 </form>
+            </div>
+
+            <!-- Theme Selector -->
+            <div class="theme-selector-wrapper" role="region" aria-label="Theme Selector">
+                <label for="theme-selector" class="theme-label">
+                    <span aria-hidden="true">🎨</span>
+                    <span class="screen-reader-text">Choose color theme</span>
+                </label>
+                <select id="theme-selector" aria-label="Select site color theme">
+                    <option value="orange">Orange (Default)</option>
+                    <option value="blue">Ocean Blue</option>
+                    <option value="green">Forest Green</option>
+                    <option value="red">Burgundy Red</option>
+                    <option value="purple">Royal Purple</option>
+                    <optgroup label="Mixed Themes">
+                        <option value="navyCoral">Navy & Coral</option>
+                        <option value="tealAmber">Teal & Amber</option>
+                        <option value="plumGold">Plum & Gold</option>
+                        <option value="forestRust">Forest & Rust</option>
+                        <option value="slateRose">Slate & Rose</option>
+                        <option value="indigoLime">Indigo & Lime</option>
+                    </optgroup>
+                </select>
             </div>
         </div>
     </header>
@@ -120,7 +143,8 @@
                     <h2>Contact Form</h2>
                     <p>Please fill out the form below and we'll get back to you as soon as possible. If you prefer, you can also reach us through the contact information listed at the bottom of this page.</p>
 
-                    <form class="contact-form" aria-label="Contact Form">
+                    <form class="contact-form" aria-label="Contact Form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="aa3645fb-3c9f-49f9-adc3-9cff695dd951">
                         <div class="form-group">
                             <label for="name">Name <span aria-label="required">*</span></label>
                             <input type="text" id="name" name="name" required aria-required="true">
@@ -198,5 +222,6 @@
 
     <script src="script.js"></script>
     <script src="search.js"></script>
+    <script src="theme-switcher.js"></script>
 </body>
 </html>

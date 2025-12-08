@@ -1,15 +1,15 @@
-/**
+﻿/**
  * MOBALE - Accessible Sports Website
  * JavaScript for enhanced functionality
  */
 
 // Mobile Menu Toggle
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function () {
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
 
             // Toggle menu
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const isClickInside = menuToggle.contains(event.target) || navMenu.contains(event.target);
 
             if (!isClickInside && navMenu.classList.contains('active')) {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Close menu on ESC key
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape' && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
@@ -64,7 +64,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             target.focus();
 
             // Remove tabindex after focus
-            target.addEventListener('blur', function() {
+            target.addEventListener('blur', function () {
                 target.removeAttribute('tabindex');
             }, { once: true });
         }
@@ -72,10 +72,81 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Form Validation with Accessible Error Messages
-const contactForm = document.querySelector('.contact-form');
 
+const contactForm2a = document.getElementById('contactForm');
+const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Get form fields
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const message = document.getElementById('message');
+
+        // Clear previous errors
+        clearErrors();
+
+        let isValid = true;
+
+        // Validate name
+        if (name.value.trim() === '') {
+            showError(name, 'Name is required');
+            isValid = false;
+        }
+
+        // Validate email
+        if (email.value.trim() === '') {
+            showError(email, 'Email is required');
+            isValid = false;
+        } else if (!isValidEmail(email.value)) {
+            showError(email, 'Please enter a valid email address');
+            isValid = false;
+        }
+
+        // Validate message
+        if (message.value.trim() === '') {
+            showError(message, 'Message is required');
+            isValid = false;
+        }
+
+        if (isValid) {
+            // ⭐ Submit to Web3Forms
+            const formData = new FormData(contactForm);
+
+            fetch(contactForm.action, {
+                method: "POST",
+                body: formData
+            })
+                .then(async (response) => {
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        showSuccessMessage();
+                        contactForm.reset();
+                    } else {
+                        alert("Error: " + result.message);
+                    }
+                })
+                .catch(error => {
+                    alert("Something went wrong. Please try again.");
+                    console.error(error);
+                });
+        } else {
+            // Focus on first error
+            const firstError = contactForm.querySelector('.error-message');
+            if (firstError) {
+                const errorField = firstError.previousElementSibling;
+                errorField.focus();
+            }
+        }
+    });
+}
+
+const contactForm2 = document.querySelector('.contact-form');
+
+if (false) {
+    contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
         // Get form fields
@@ -194,7 +265,7 @@ function announcePageLoad() {
 announcePageLoad();
 
 // Keyboard Navigation Enhancement
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     // Allow keyboard users to activate cards with Enter/Space
     if (e.key === 'Enter' || e.key === ' ') {
         if (e.target.classList.contains('sport-card') || e.target.classList.contains('news-post')) {
@@ -218,7 +289,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 if (prefersReducedMotion.matches) {
     // Disable smooth scroll for users who prefer reduced motion
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({
