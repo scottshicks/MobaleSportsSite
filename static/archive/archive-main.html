@@ -17,20 +17,20 @@
         .month-block {
             display: inline-block;
             padding: 0.75rem 1.5rem;
-            background: #cc6611;
+            background: var(--primary-color);
             color: white;
             text-decoration: none;
             border-radius: 4px;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 2px solid #cc6611;
+            border: 2px solid var(--primary-color);
         }
         .month-block:hover,
         .month-block:focus {
-            background: #aa5510;
-            border-color: #aa5510;
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(204, 102, 17, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -42,9 +42,16 @@
     <!-- Header -->
     <header role="banner">
         <div class="container">
-            <div class="site-branding">
-                <h1 class="site-title"><a href="index.html" style="color: white; text-decoration: none;">MOBALE</a></h1>
-                <p class="site-description">Maine Organization for Blind Athletic and Leadership Education</p>
+            <div class="header-content">
+                <div class="site-branding">
+                    <h1 class="site-title"><a href="../index.html" style="color: white; text-decoration: none;">MOBALE</a></h1>
+                    <p class="site-description">Maine Organization for Blind Athletic and Leadership Education</p>
+                </div>
+                <div class="site-logo">
+                    <a href="../index.html">
+                        <img src="../images/mobale-logo.png" alt="MOBALE Logo" class="logo-image">
+                    </a>
+                </div>
             </div>
 
             <nav id="main-navigation" role="navigation" aria-label="Main Navigation">
@@ -53,13 +60,13 @@
                     <span class="menu-icon" aria-hidden="true">☰</span>
                 </button>
                 <ul id="primary-menu" class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="programs.html">Programs</a></li>
-                    <li><a href="sports.html">Sports</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="archive-main.html">Archive</a></li>
-                    <li><a href="getinvolved.html">Contact</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../programs.html">Programs</a></li>
+                    <li><a href="../sports.html">Sports</a></li>
+                    <li><a href="../news.html">News</a></li>
+                    <li><a href="../archive-main.html">Archive</a></li>
+                    <li><a href="../getinvolved.html">Contact</a></li>
                 </ul>
             </nav>
 
@@ -70,6 +77,29 @@
                     <input type="search" id="site-search-input" name="q" placeholder="Search site..." aria-label="Search query" autocomplete="off">
                     <button type="submit" id="site-search-button" aria-label="Search"><span aria-hidden="true">🔍</span></button>
                 </form>
+            </div>
+
+            <!-- Theme Selector -->
+            <div class="theme-selector-wrapper" role="region" aria-label="Theme Selector">
+                <label for="theme-selector" class="theme-label">
+                    <span aria-hidden="true">🎨</span>
+                    <span class="screen-reader-text">Choose color theme</span>
+                </label>
+                <select id="theme-selector" aria-label="Select site color theme">
+                    <option value="orange">Orange (Default)</option>
+                    <option value="blue">Ocean Blue</option>
+                    <option value="green">Forest Green</option>
+                    <option value="red">Burgundy Red</option>
+                    <option value="purple">Royal Purple</option>
+                    <optgroup label="Mixed Themes">
+                        <option value="navyCoral">Navy & Coral</option>
+                        <option value="tealAmber">Teal & Amber</option>
+                        <option value="plumGold">Plum & Gold</option>
+                        <option value="forestRust">Forest & Rust</option>
+                        <option value="slateRose">Slate & Rose</option>
+                        <option value="indigoLime">Indigo & Lime</option>
+                    </optgroup>
+                </select>
             </div>
         </div>
     </header>
@@ -230,8 +260,9 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="search.js"></script>
+    <script src="../script.js"></script>
+    <script src="../search.js"></script>
+    <script src="../theme-switcher.js"></script>
     <script src="archive-nav.js"></script>
 </body>
 </html>
