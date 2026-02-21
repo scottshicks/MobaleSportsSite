@@ -1,0 +1,1008 @@
+/* ===================================
+   MOBALE - Accessible Sports Website
+   Based on modern WordPress accessible design principles
+   =================================== */
+
+/* CSS Variables for Theme Customization */
+:root {
+    --primary-color: #cc6611;
+    --secondary-color: #eeaa00;
+    --text-color: #333333;
+    --bg-color: #ffffff;
+    --light-bg: #f9f9f9;
+    --border-color: #dddddd;
+    --focus-color: #0066cc;
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --heading-font: Georgia, 'Times New Roman', serif;
+    --max-width: 1200px;
+    --spacing: 1.5rem;
+}
+
+/* ===================================
+   Reset & Base Styles
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* ===================================
+   Accessibility Features
+   =================================== */
+
+/* Skip Links */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--focus-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Screen Reader Only Text */
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Focus Styles - High Contrast */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+/* ===================================
+   Typography
+   =================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Ensure sufficient contrast - WCAG AA compliant */
+a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* ===================================
+   Layout Components
+   =================================== */
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing);
+}
+
+/* ===================================
+   Header
+   =================================== */
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Search and Theme Selector on same row */
+.site-search,
+.theme-selector-wrapper {
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.site-branding {
+    margin-bottom: 0;
+}
+
+.site-title {
+    color: white;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.site-description {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Header Content with Logo */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.site-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 70px;
+    width: auto;
+    display: block;
+}
+
+.site-logo a {
+    display: block;
+    line-height: 0;
+}
+
+.site-logo a:focus {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+/* ===================================
+   Navigation
+   =================================== */
+
+nav {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        margin: 1rem 0;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .nav-menu a {
+        padding: 1rem;
+    }
+}
+
+/* ===================================
+   Theme Selector
+   =================================== */
+
+.theme-selector-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+
+.theme-label {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+#theme-selector {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    font-family: var(--font-family);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 180px;
+}
+
+#theme-selector:hover {
+    background-color: white;
+    border-color: var(--secondary-color);
+}
+
+#theme-selector:focus {
+    outline: 3px solid white;
+    outline-offset: 2px;
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
+    .theme-selector-wrapper {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    #theme-selector {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+
+.hero {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* ===================================
+   Buttons
+   =================================== */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--light-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* ===================================
+   Content Sections
+   =================================== */
+
+.content-section {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.content-section:last-child {
+    border-bottom: none;
+}
+
+/* ===================================
+   Sports Grid
+   =================================== */
+
+.sports-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.sport-card {
+    background-color: var(--light-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sport-card:hover,
+.sport-card:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.sport-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* ===================================
+   News Posts
+   =================================== */
+
+.news-post {
+    background-color: var(--light-bg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.news-post h3 {
+    margin-top: 0;
+}
+
+.news-post time {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* ===================================
+   Forms
+   =================================== */
+
+.contact-form {
+    max-width: 600px;
+    margin: 2rem 0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--font-family);
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+}
+
+/* ===================================
+   Footer
+   =================================== */
+
+footer {
+    background-color: var(--text-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .sports-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+
+@media print {
+    header,
+    nav,
+    .hero,
+    footer {
+        display: none;
+    }
+
+    body {
+        color: black;
+        background: white;
+    }
+
+    a {
+        text-decoration: underline;
+        color: black;
+    }
+}
+
+/* ===================================
+   High Contrast Mode Support
+   =================================== */
+
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #000000;
+        --secondary-color: #000000;
+        --text-color: #000000;
+        --border-color: #000000;
+    }
+}
+
+/* ===================================
+   Reduced Motion Support
+   =================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===================================
+   Additional Page Styles
+   =================================== */
+
+/* Page Content */
+.page-content {
+    max-width: 900px;
+    padding-top:30px;
+}
+
+.lead {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* Read More Links */
+.read-more {
+    display: inline-block;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 0.5rem;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* News Post Full View */
+.news-post.full-post {
+    border-left: 4px solid var(--primary-color);
+}
+
+.news-post.full-post h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.news-post.full-post h3 {
+    color: var(--text-color);
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+
+.news-post.full-post h4 {
+    color: var(--text-color);
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.post-content ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Photo Placeholders */
+.photo-placeholder {
+    background-color: var(--light-bg);
+    border: 2px dashed var(--border-color);
+    padding: 3rem 2rem;
+    margin: 2rem 0;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.photo-placeholder p {
+    color: #666;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Sport Detail Pages */
+.sport-detail {
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 2rem;
+}
+
+.sport-detail h2 {
+    color: var(--primary-color);
+}
+
+.sport-content ul {
+    margin-left: 1.5rem;
+}
+
+/* Involvement Cards */
+.involvement-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.involvement-card {
+    background-color: var(--light-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border-top: 4px solid var(--primary-color);
+}
+
+.involvement-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.involvement-card ul {
+    margin-left: 1.5rem;
+}
+
+/* Highlight Box */
+.highlight-box {
+    background-color: var(--light-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Active Navigation Link */
+nav a[aria-current="page"] {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* ===================================
+   Site Search
+   =================================== */
+
+/* Search and Theme Selector Row */
+.site-search {
+    width: auto;
+    flex: 1;
+    max-width: 400px;
+}
+
+.site-search form {
+    display: flex;
+    gap: 0;
+    max-width: 400px;
+}
+
+.site-search input[type="search"] {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px 0 0 4px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--text-color);
+    font-family: var(--font-family);
+}
+
+.site-search input[type="search"]:focus {
+    outline: 3px solid white;
+    outline-offset: 2px;
+    background-color: white;
+}
+
+.site-search input[type="search"]::placeholder {
+    color: #666;
+}
+
+.site-search button {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    border-radius: 0 4px 4px 0;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.site-search button:hover,
+.site-search button:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Search Results Page */
+.search-info {
+    background-color: var(--light-bg);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+}
+
+.search-results-list {
+    margin: 2rem 0;
+}
+
+.search-result {
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.search-result h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.search-result h3 a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.search-result h3 a:hover,
+.search-result h3 a:focus {
+    text-decoration: underline;
+}
+
+.result-url {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.result-excerpt {
+    line-height: 1.6;
+}
+
+.result-excerpt mark {
+    background-color: #fff59d;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+.no-results {
+    background-color: var(--light-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.no-results ul {
+    margin-left: 1.5rem;
+}
+
+/* Mobile Search */
+@media (max-width: 768px) {
+    .site-search {
+        margin-top: 1rem;
+    }
+
+    .site-search form {
+        max-width: 100%;
+    }
+
+    .site-search input[type="search"] {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===================================
+   Content Images
+   =================================== */
+
+.content-image {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.content-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.content-image figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+}
+
+/* ===================================
+   Blog Archive
+   =================================== */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 30px;
+}
+
+.main-content {
+    padding-top: 30px;
+}
+
+.page-header h1 {
+    margin: 0;
+}
+
+.archive-nav {
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.year-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.year-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 4px;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.year-link:hover,
+.year-link:focus {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.year-link.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.archive-year {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.archive-year:last-of-type {
+    border-bottom: none;
+}
+
+.archive-year h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.archive-post {
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.archive-post h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.archive-post h3 a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.archive-post h3 a:hover,
+.archive-post h3 a:focus {
+    text-decoration: underline;
+}
+
+.archive-post time {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.archive-post p {
+    line-height: 1.6;
+}
+
+.archive-note {
+    font-style: italic;
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.archive-note a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.archive-summary {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* Mobile Archive */
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .year-list {
+        flex-direction: column;
+    }
+
+    .year-link {
+        width: 100%;
+        text-align: center;
+    }
+}

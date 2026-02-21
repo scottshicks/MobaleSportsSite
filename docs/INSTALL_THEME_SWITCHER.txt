@@ -1,0 +1,87 @@
+HOW TO INSTALL THE THEME SWITCHER
+==================================
+
+Follow these 3 steps to add the theme switcher to your static site:
+
+STEP 1: ADD JAVASCRIPT
+----------------------
+1. Open home.html (and all other HTML files)
+2. Find the closing </body> tag (near the bottom)
+3. ADD this line BEFORE </body>:
+
+   <script src="theme-switcher.js"></script>
+
+4. Save the file
+
+
+STEP 2: ADD HTML TO HEADER
+---------------------------
+1. Open home.html
+2. Find the site-search div (around line 40-53)
+3. AFTER the closing </div> of site-search
+4. BEFORE the closing </div> of container
+5. PASTE the HTML from THEME_SELECTOR_HTML.txt
+
+Should look like this:
+    </div> <!-- closing site-search -->
+
+    <!-- Theme Selector -->
+    <div class="theme-selector-wrapper">
+        ...theme selector HTML...
+    </div>
+
+</div> <!-- closing container -->
+
+
+STEP 3: ADD CSS STYLING
+------------------------
+1. Open styles.css
+2. Find the Header section (around line 200-300)
+3. PASTE the CSS from THEME_SELECTOR_CSS.txt
+4. Save
+
+
+STEP 4: TEST IT!
+----------------
+1. Open home.html in your browser
+2. You should see a 🎨 icon with a dropdown in the header
+3. Select a theme from the dropdown
+4. The site colors should change instantly!
+5. Refresh the page - your theme choice should be remembered
+
+
+IMPORTANT NOTES:
+---------------
+• You need to add the JavaScript to ALL HTML pages
+• You need to add the HTML selector to ALL HTML pages
+• The CSS only needs to be added once to styles.css
+• User's theme choice is saved in browser localStorage
+• Works on all modern browsers
+
+
+FILES CREATED:
+--------------
+✓ theme-switcher.js - The JavaScript logic
+✓ THEME_SELECTOR_HTML.txt - HTML code to add
+✓ THEME_SELECTOR_CSS.txt - CSS code to add
+✓ INSTALL_THEME_SWITCHER.txt - This guide
+
+
+THEMES INCLUDED:
+---------------
+Single Colors:
+- Orange (Default)
+- Ocean Blue
+- Forest Green
+- Burgundy Red
+- Royal Purple
+
+Mixed Colors:
+- Navy & Coral
+- Teal & Amber
+- Plum & Gold
+- Forest & Rust
+- Slate & Rose
+- Indigo & Lime
+
+Total: 11 themes! 🎨
