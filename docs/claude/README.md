@@ -48,7 +48,7 @@ Based on **Neve** WordPress theme principles:
 
 ```
 MobaleSports/
-├── home.html       # Main HTML structure
+├── index.html       # Main HTML structure
 ├── styles.css       # CSS with accessibility features
 ├── script.js        # JavaScript for interactivity
 └── README.md        # This file
@@ -119,7 +119,7 @@ a:focus, button:focus {
 
 ### Local Development
 
-1. Open `home.html` in a web browser
+1. Open `index.html` in a web browser
 2. No build process required - pure HTML/CSS/JS
 3. All features work offline
 
@@ -136,7 +136,7 @@ Edit CSS variables in `styles.css`:
 ```
 
 #### Content
-Edit text directly in `home.html` within semantic sections.
+Edit text directly in `index.html` within semantic sections.
 
 #### Sports Programs
 Add/remove sport cards in the `.sports-container` section.

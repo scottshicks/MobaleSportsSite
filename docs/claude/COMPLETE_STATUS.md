@@ -106,7 +106,7 @@
 
 ```
 MobaleSports/
-├── home.html                      ✅ Complete with search & archive link
+├── index.html                      ✅ Complete with search & archive link
 ├── about.html                      ✅ Complete
 ├── programs.html                   ✅ Complete
 ├── sports.html                     ✅ Complete (10+ sports)

@@ -4,7 +4,7 @@ for file in what-we-do.html impact.html team.html partners.html get-involved.htm
     sed -i '/^            <\/div>$/,/^            <nav id="main-navigation"/ {
       /^            <\/div>$/ {
         i\                <div class="site-logo">\
-                    <a href="home.html">\
+                    <a href="index.html">\
                         <img src="images/mobale-logo.png" alt="MOBALE Logo" class="logo-image">\
                     </a>\
                 </div>\

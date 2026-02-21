@@ -10,7 +10,7 @@ echo.
 REM This adds the script tag before closing body tag in all HTML files
 REM You'll still need to manually add the HTML dropdown to each page header
 
-powershell -Command "(Get-Content home.html) -replace '</body>', '    <script src=\"theme-switcher.js\"></script>^</body>' | Set-Content home.html"
+powershell -Command "(Get-Content index.html) -replace '</body>', '    <script src=\"theme-switcher.js\"></script>^</body>' | Set-Content index.html"
 powershell -Command "(Get-Content about.html) -replace '</body>', '    <script src=\"theme-switcher.js\"></script>^</body>' | Set-Content about.html"
 powershell -Command "(Get-Content programs.html) -replace '</body>', '    <script src=\"theme-switcher.js\"></script>^</body>' | Set-Content programs.html"
 powershell -Command "(Get-Content sports.html) -replace '</body>', '    <script src=\"theme-switcher.js\"></script>^</body>' | Set-Content sports.html"

@@ -104,7 +104,7 @@ Ensure any gallery plugin you choose supports:
 
 ### 7. Suggested Images for Each Page
 
-**Homepage (home.html):**
+**Homepage (index.html):**
 - Hero image of athletes in action
 - Photos in the news section showing recent camps
 

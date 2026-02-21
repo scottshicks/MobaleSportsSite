@@ -1,6 +1,6 @@
 /* ===================================
    ADD THIS TO YOUR HEADER
-   Place this AFTER the site-search div (around line 53 in home.html)
+   Place this AFTER the site-search div (around line 53 in index.html)
    BEFORE the closing </div> of the container
    =================================== */
 

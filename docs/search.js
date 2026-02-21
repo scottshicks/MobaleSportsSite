@@ -7,7 +7,7 @@ const searchIndex = [
     // Home page
     {
         title: "Home",
-        url: "home.html",
+        url: "index.html",
         keywords: ["home", "mobale", "maine", "organization", "blind", "athletic", "leadership", "education", "sports", "visually", "impaired", "youth"],
         content: "Empowering Visually Impaired Youth Through Sports. Building confidence, leadership, and athletic skills through inclusive sports education."
     },

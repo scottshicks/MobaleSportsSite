@@ -5,7 +5,7 @@ Follow these 3 steps to add the theme switcher to your static site:
 
 STEP 1: ADD JAVASCRIPT
 ----------------------
-1. Open home.html (and all other HTML files)
+1. Open index.html (and all other HTML files)
 2. Find the closing </body> tag (near the bottom)
 3. ADD this line BEFORE </body>:
 
@@ -16,7 +16,7 @@ STEP 1: ADD JAVASCRIPT
 
 STEP 2: ADD HTML TO HEADER
 ---------------------------
-1. Open home.html
+1. Open index.html
 2. Find the site-search div (around line 40-53)
 3. AFTER the closing </div> of site-search
 4. BEFORE the closing </div> of container
@@ -43,7 +43,7 @@ STEP 3: ADD CSS STYLING
 
 STEP 4: TEST IT!
 ----------------
-1. Open home.html in your browser
+1. Open index.html in your browser
 2. You should see a 🎨 icon with a dropdown in the header
 3. Select a theme from the dropdown
 4. The site colors should change instantly!

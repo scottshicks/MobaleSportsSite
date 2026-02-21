@@ -4,7 +4,7 @@
 
 ### 1. **Full Site Navigation (Working Links)**
 All navigation links now work and point to actual pages:
-- **home.html** - Home page with overview and latest news
+- **index.html** - Home page with overview and latest news
 - **about.html** - Mission, impact, team, partners, and involvement
 - **programs.html** - Detailed Summer Sports Education Camp information
 - **sports.html** - In-depth descriptions of all 10+ sports programs
@@ -57,7 +57,7 @@ Successfully downloaded real images from mobalesports.blogspot.com:
 - Additional placeholder images for other sports
 
 **Images Added To:**
-- Home page (home.html) - 2025 group photo in About section
+- Home page (index.html) - 2025 group photo in About section
 - News page (news.html) - Goalball action photo in 2024 camp review
 
 **Image Features:**
@@ -103,7 +103,7 @@ All actual content from mobalesports.blogspot.com has been incorporated:
 - `SITE_FEATURES.md` - This file
 
 **Modified Files:**
-- `home.html` - Added search box and group photo
+- `index.html` - Added search box and group photo
 - `about.html` - Added search box
 - `programs.html` - Added search box
 - `sports.html` - Added search box
@@ -177,7 +177,7 @@ All actual content from mobalesports.blogspot.com has been incorporated:
 ## How to Test
 
 ### Test Search Functionality:
-1. Open any page (e.g., `home.html`)
+1. Open any page (e.g., `index.html`)
 2. Look for search box in header (below navigation)
 3. Try these searches:
    - "goalball" - Should find sports page and news
@@ -188,7 +188,7 @@ All actual content from mobalesports.blogspot.com has been incorporated:
    - "archery" - Should find sports program
 
 ### Test Images:
-1. Open `home.html` - See group photo in About section
+1. Open `index.html` - See group photo in About section
 2. Open `news.html` - Scroll to 2024 photos section, see goalball image
 3. Images should be responsive (resize browser)
 4. Images should have visible captions below them
