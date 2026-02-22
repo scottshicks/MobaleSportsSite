@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(python:*)",
+      "Bash(for file in *.html archive/*.html)",
+      "Bash(do if [ -f \"$file\" ])",
+      "Bash(then sed -i 's/<option value=\"\"orange\"\">Orange<\\\\/option>/<option value=\"\"orange\"\">Orange<\\\\/option>TEMPMARKER/g; s/<option value=\"\"red\"\">Burgundy Red \\(Default\\)<\\\\/option>/<option value=\"\"red\"\">Burgundy Red \\(Default\\)<\\\\/option>REDMARKER/g' \"$file\")",
+      "Bash(fi:*)",
+      "Bash(done)",
+      "Bash(chmod:*)",
+      "Bash(./add_accessibility.sh:*)",
+      "Bash(./update_theme_label.sh:*)",
+      "Bash(then sed -i 's/🎨/⚙️/g' \"$file\")",
+      "Bash(py -3 --version 2>/dev/null || node --version 2>/dev/null1111q)"
+    ]
+  }
+}

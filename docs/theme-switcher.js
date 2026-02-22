@@ -4,8 +4,17 @@
    =================================== */
 
 const themes = {
+    red: {
+        name: "Burgundy Red (Default)",
+        primaryColor: "#5c0f1a",
+        secondaryColor: "#d95565",
+        textColor: "#000000",
+        bgColor: "#ffffff",
+        lightBg: "#fff5f6",
+        borderColor: "#cc9ba0"
+    },
     orange: {
-        name: "Orange (Default)",
+        name: "Orange",
         primaryColor: "#8a4000",
         secondaryColor: "#b87700",
         textColor: "#000000",
@@ -27,14 +36,6 @@ const themes = {
         textColor: "#0f2419",
         lightBg: "#f1f8f4",
         borderColor: "#b8e6cc"
-    },
-    red: {
-        name: "Burgundy Red",
-        primaryColor: "#5c0f1a",
-        secondaryColor: "#9a1f2a",
-        textColor: "#000000",
-        lightBg: "#fff5f6",
-        borderColor: "#cc9ba0"
     },
     purple: {
         name: "Royal Purple",
@@ -91,6 +92,24 @@ const themes = {
         textColor: "#0f0d2e",
         lightBg: "#f5f7ff",
         borderColor: "#bfb8e8"
+    },
+    highContrast: {
+        name: "High Contrast",
+        primaryColor: "#000000",
+        secondaryColor: "#000000",
+        textColor: "#000000",
+        bgColor: "#ffffff",
+        lightBg: "#ffffff",
+        borderColor: "#000000"
+    },
+    inverted: {
+        name: "Inverted (Dark Mode)",
+        primaryColor: "#cccccc",
+        secondaryColor: "#aaaaaa",
+        textColor: "#ffffff",
+        bgColor: "#080808",
+        lightBg: "#161616",
+        borderColor: "#555555"
     }
 };
 
@@ -103,8 +122,18 @@ function applyTheme(themeName) {
     root.style.setProperty('--primary-color', theme.primaryColor);
     root.style.setProperty('--secondary-color', theme.secondaryColor);
     root.style.setProperty('--text-color', theme.textColor);
+    root.style.setProperty('--bg-color', theme.bgColor || '#ffffff');
     root.style.setProperty('--light-bg', theme.lightBg);
     root.style.setProperty('--border-color', theme.borderColor);
+
+    // Apply theme-specific classes to body for additional styling
+    document.body.classList.remove('theme-inverted', 'theme-high-contrast');
+
+    if (themeName === 'inverted') {
+        document.body.classList.add('theme-inverted');
+    } else if (themeName === 'highContrast') {
+        document.body.classList.add('theme-high-contrast');
+    }
 
     // Save preference to localStorage
     localStorage.setItem('mobale-theme', themeName);
@@ -112,7 +141,7 @@ function applyTheme(themeName) {
 
 // Load saved theme on page load
 function loadSavedTheme() {
-    const savedTheme = localStorage.getItem('mobale-theme') || 'orange';
+    const savedTheme = localStorage.getItem('mobale-theme') || 'red';
     const themeSelector = document.getElementById('theme-selector');
 
     if (themeSelector) {

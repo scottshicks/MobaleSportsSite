@@ -125,7 +125,7 @@ const searchIndex = [
     // Contact page
     {
         title: "Contact & Get Involved",
-        url: "contact.html",
+        url: "getinvolved.html#contact",
         keywords: ["contact", "get involved", "athlete", "volunteer", "donate", "support", "partner", "registration", "apply"],
         content: "Get involved with MOBALE - athletes, volunteers, donors, partners. Camp registration, volunteer opportunities, financial support, partnerships. Contact form for inquiries."
     },
