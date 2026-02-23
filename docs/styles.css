@@ -187,12 +187,14 @@ header .container {
     flex-shrink: 0;
     display: flex;
     align-items: center;
+    padding-left: 1rem;
 }
 
 .logo-image {
     height: 70px;
     width: auto;
     display: block;
+    border-radius: 6px;
 }
 
 .site-logo a {
@@ -249,6 +251,10 @@ nav {
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
+    .header-content {
+        align-items: flex-start;
+    }
+
     .menu-toggle {
         display: block;
         margin: 1rem 0;

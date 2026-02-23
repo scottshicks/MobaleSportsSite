@@ -131,13 +131,13 @@ const searchIndex = [
     },
     {
         title: "Volunteer Opportunities",
-        url: "contact.html",
+        url: "getinvolved.html#contact",
         keywords: ["volunteer", "counselor", "instructor", "junior counselor", "staff"],
         content: "Volunteer opportunities - camp counselors, sports instructors, junior counselors, support staff. No previous experience required."
     },
     {
         title: "FAQs",
-        url: "contact.html",
+        url: "getinvolved.html#contact",
         keywords: ["faq", "questions", "eligibility", "cost", "fees", "scholarship", "family"],
         content: "Frequently Asked Questions - eligibility, cost, fees, scholarships, volunteer requirements, camp dates, family involvement, skill levels."
     }
