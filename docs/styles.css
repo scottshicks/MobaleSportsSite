@@ -538,11 +538,16 @@ nav {
    =================================== */
 
 footer {
-    background-color: var(--text-color);
+    background-color: var(--primary-color);
     color: white;
     padding: 2rem 0;
     text-align: center;
     margin-top: 3rem;
+}
+
+.theme-inverted footer {
+    background-color: #222222;
+    color: #ffffff;
 }
 
 footer p {
