@@ -686,6 +686,29 @@ footer p {
     margin-bottom: 1.5rem;
 }
 
+/* Sport Page Images */
+.sport-images {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.sport-images img {
+    width: 50%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+    .sport-images {
+        flex-direction: column;
+    }
+    .sport-images img {
+        width: 100%;
+    }
+}
+
 /* Photo Placeholders */
 .photo-placeholder {
     background-color: var(--light-bg);
