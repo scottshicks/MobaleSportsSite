@@ -146,6 +146,95 @@
     <main id="main-content" role="main">
         <div class="container">
 
+            <!-- 2026 Camp Announcement Banner -->
+            <div id="announcement-banner" class="announcement-banner">
+                <button id="announcement-toggle-btn"
+                        class="announcement-banner-header"
+                        onclick="toggleAnnouncement()"
+                        aria-expanded="true"
+                        aria-controls="announcement-content">
+                    <span class="announcement-banner-title">
+                        <span class="announcement-badge">&#128226; NEW</span>
+                        <span class="announcement-banner-heading">2026 UNH Wildcat Sports Education Camp for the Blind &mdash; Save the Dates!</span>
+                    </span>
+                    <span class="announcement-toggle-indicator">&#9650; Collapse</span>
+                </button>
+
+                <div id="announcement-content" class="announcement-content">
+                    <p><strong class="announcement-highlight">SAVE THE DATES!</strong> MOBALE is proud to announce that we will be partnering with the University of New Hampshire to present the <strong>2026 UNH Wildcat Sports Education Camp for the Blind</strong>.</p>
+
+                    <div class="announcement-details">
+                        <div class="announcement-detail-row">
+                            <span class="announcement-detail-label">Dates:</span>
+                            <span>Sunday June 28 &ndash; Thursday July 2, 2026</span>
+                        </div>
+                        <div class="announcement-detail-row">
+                            <span class="announcement-detail-label">Location:</span>
+                            <span>University of New Hampshire, Durham, N.H. campus &mdash; overnight lodging in safe &amp; secure dormitories with adult supervision</span>
+                        </div>
+                        <div class="announcement-detail-row">
+                            <span class="announcement-detail-label">Who can participate:</span>
+                            <span>Boys &amp; Girls aged 10&ndash;18 (through Senior in high school) who are blind or visually impaired from Maine &amp; other New England states</span>
+                        </div>
+                        <div class="announcement-detail-row">
+                            <span class="announcement-detail-label">Cost per athlete:</span>
+                            <span>$100 &mdash; includes housing, athletic facilities, meals &amp; camp T-shirt. <strong class="announcement-highlight">NOTE:</strong> <em>Sponsorships are available for athletes from Maine and former MOBALE athletes from other states who may need financial assistance.</em></span>
+                        </div>
+                        <div class="announcement-detail-row">
+                            <span class="announcement-detail-label">Funding:</span>
+                            <span>Generously supported by The Gibney Family Foundation (TGFF), keeping program costs affordable for all athletes. Please reach out if the program fee creates a financial hardship.</span>
+                        </div>
+                        <div class="announcement-detail-row">
+                            <span class="announcement-detail-label">Registration Deadline:</span>
+                            <span>May 1, 2026</span>
+                        </div>
+                    </div>
+
+                    <p>MOBALE will take a major role in developing and directing the camp using the familiar vigorous, instructional, and FUN model of the Sports Education Camp (SEC) that we have presented for the past 10 years in Waterville, Maine.</p>
+
+                    <p class="announcement-section-heading">Competitive Sports:</p>
+                    <ul>
+                        <li>Goalball</li>
+                        <li>Wrestling</li>
+                        <li>Track and Field</li>
+                        <li>Disc Golf</li>
+                    </ul>
+
+                    <p class="announcement-section-heading">Additional Sports May Include:</p>
+                    <ul>
+                        <li>Rock climbing</li>
+                        <li>Tandem biking</li>
+                        <li>Fitness and strength training</li>
+                        <li>Beep kickball</li>
+                        <li>Yoga</li>
+                        <li>Swimming</li>
+                    </ul>
+
+                    <p class="announcement-section-heading">New &amp; Exciting!</p>
+                    <p>University of New Hampshire graduate students from the Master&rsquo;s Program of Kinesiology and Adapted Physical Education will join the MOBALE staff as trainers and counselors, offering expertise that will both challenge and support participant athletes.</p>
+
+                    <p class="announcement-section-heading">Camp Benefits:</p>
+                    <ul>
+                        <li>Confidence-building</li>
+                        <li>Sportsmanship</li>
+                        <li>Leadership development</li>
+                        <li>Self-advocacy skills</li>
+                        <li>Orientation &amp; mobility skills</li>
+                        <li>Peer interactions and relationship-building</li>
+                        <li>Safety awareness</li>
+                        <li>Personal health and fitness habits</li>
+                        <li>Experience a college campus environment</li>
+                    </ul>
+
+                    <p>And, of course&hellip; <strong class="announcement-highlight"><em>FUN, FUN, FUN!</em></strong></p>
+
+                    <div class="announcement-coming-soon">
+                        <h3>Coming Soon!</h3>
+                        <p>Please check back for more information, updates, and a registration link.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- About Section -->
             <section id="about" class="content-section" aria-labelledby="about-heading">
                 <h2 id="about-heading">About MOBALE</h2>
@@ -285,4 +374,50 @@
     <script src="script.js"></script>
     <script src="search.js"></script>
     <script src="theme-switcher.js"></script>
+    <script>
+        (function () {
+            var STORAGE_KEY = 'mobale-announcement-collapsed';
+
+            window.toggleAnnouncement = function () {
+                var content = document.getElementById('announcement-content');
+                var btn = document.getElementById('announcement-toggle-btn');
+                var indicator = btn.querySelector('.announcement-toggle-indicator');
+                var isCollapsed = content.classList.contains('collapsed');
+                if (isCollapsed) {
+                    content.classList.remove('collapsed');
+                    indicator.innerHTML = '&#9650; Collapse';
+                    btn.setAttribute('aria-expanded', 'true');
+                    localStorage.setItem(STORAGE_KEY, 'false');
+                } else {
+                    content.classList.add('collapsed');
+                    indicator.innerHTML = '&#9660; Show Announcement';
+                    btn.setAttribute('aria-expanded', 'false');
+                    localStorage.setItem(STORAGE_KEY, 'true');
+                }
+            };
+
+            document.addEventListener('DOMContentLoaded', function () {
+                if (localStorage.getItem(STORAGE_KEY) === 'true') {
+                    var content = document.getElementById('announcement-content');
+                    var btn = document.getElementById('announcement-toggle-btn');
+                    if (content && btn) {
+                        content.classList.add('collapsed');
+                        btn.querySelector('.announcement-toggle-indicator').innerHTML = '&#9660; Show Announcement';
+                        btn.setAttribute('aria-expanded', 'false');
+                    }
+                }
+
+                var FIRST_VISIT_KEY = 'mobale-announcement-seen';
+                if (!localStorage.getItem(FIRST_VISIT_KEY)) {
+                    setTimeout(function () {
+                        var banner = document.getElementById('announcement-banner');
+                        if (banner) {
+                            banner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                        localStorage.setItem(FIRST_VISIT_KEY, 'true');
+                    }, 600);
+                }
+            });
+        })();
+    </script>
 </body>
