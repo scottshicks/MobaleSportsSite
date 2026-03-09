@@ -801,6 +801,19 @@ footer p {
     color: var(--secondary-color);
 }
 
+.announcement-detail-row--deadline {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    margin-top: 0.25rem;
+}
+
+.announcement-detail-row--deadline .announcement-detail-label {
+    color: white;
+    text-decoration: none;
+}
+
 .announcement-coming-soon {
     text-align: center;
     margin-top: 1.5rem;
