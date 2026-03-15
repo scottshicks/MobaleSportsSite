@@ -814,6 +814,10 @@ footer p {
     text-decoration: none;
 }
 
+.announcement-detail-row--deadline a {
+    color: white;
+}
+
 .announcement-coming-soon {
     text-align: center;
     margin-top: 1.5rem;

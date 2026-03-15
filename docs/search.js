@@ -9,7 +9,7 @@ const searchIndex = [
         title: "Home",
         url: "index.html",
         keywords: ["home", "mobale", "maine", "organization", "blind", "athletic", "leadership", "education", "sports", "visually", "impaired", "youth"],
-        content: "Empowering Visually Impaired Youth Through Sports. Building confidence, leadership, and athletic skills through inclusive sports education."
+        content: "Empowering youth with visual impairments Through Sports. Building confidence, leadership, and athletic skills through inclusive sports education."
     },
 
     // About page
@@ -17,7 +17,7 @@ const searchIndex = [
         title: "About MOBALE",
         url: "about.html",
         keywords: ["about", "mission", "impact", "team", "volunteers", "counselors", "partners", "alfond", "organization"],
-        content: "Maine Organization for Blind Athletic and Leadership Education promotes sports and leadership opportunities for visually impaired youth. Summer Sports Education Camp, leadership development, adaptive sports training, community building."
+        content: "Maine Organization for Blind Athletic and Leadership Education promotes sports and leadership opportunities for youth with visual impairments. Summer Sports Education Camp, leadership development, adaptive sports training, community building."
     },
 
     // Programs page
