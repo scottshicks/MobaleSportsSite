@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Photo Gallery - MOBALE Summer Sports Camp 2026">
+    <title>Photo Gallery - MOBALE</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dropdown-navigation.css">
+    <style>
+        /* Gallery Grid */
+        .gallery-section {
+            margin-bottom: 3rem;
+        }
+        .gallery-section h2 {
+            border-bottom: 3px solid var(--primary-color, #c8102e);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        @media (max-width: 900px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 500px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-item .gallery-label {
+            background: var(--light-bg, #f5f5f5);
+            padding: 0.5rem 0.75rem;
+            font-size: 1rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-color, #333);
+        }
+
+        /* Lightbox */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.88);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #lightbox.open {
+            display: flex;
+        }
+        #lightbox img {
+            max-width: 90vw;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.5);
+        }
+        #lightbox-caption {
+            color: #fff;
+            margin-top: 1rem;
+            font-size: 1rem;
+            text-align: center;
+        }
+        #lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2.5rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+        #lightbox-close:hover { color: #ccc; }
+
+        .gallery-year-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .gallery-year-nav a {
+            padding: 0.5rem 1.25rem;
+            border-radius: 4px;
+            border: 2px solid var(--primary-color, #c8102e);
+            color: var(--primary-color, #c8102e);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s;
+        }
+        .gallery-year-nav a.active,
+        .gallery-year-nav a:hover {
+            background: var(--primary-color, #c8102e);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Links for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-navigation" class="skip-link">Skip to navigation</a>
+
+    <!-- Header -->
+    <header role="banner">
+        <div class="container">
+            <div class="header-content">
+                <div class="site-branding">
+                    <h1 class="site-title"><a href="index.html" style="color: white; text-decoration: none;">MOBALE</a></h1>
+                    <p class="site-description">Maine Organization for Blind Athletic and Leadership Education</p>
+                </div>
+                <div class="site-logo">
+                    <a href="index.html">
+                        <img src="images/mobale-logo.png" alt="MOBALE Logo" class="logo-image">
+                    </a>
+                </div>
+            </div>
+
+            <nav id="main-navigation" role="navigation" aria-label="Main Navigation">
+                <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">
+                    <span class="screen-reader-text">Menu</span>
+                    <span class="menu-icon" aria-hidden="true">☰</span>
+                </button>
+                <ul id="primary-menu" class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+
+                    <!-- ABOUT with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="about.html">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="mission.html">Our Mission</a></li>
+                            <li><a href="what-we-do.html">What We Do</a></li>
+                            <li><a href="impact.html">Our Impact</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="board.html">Board of Directors</a></li>
+                            <li><a href="partners.html">Partners & Supporters</a></li>
+                            <li><a href="get-involved.html">Get Involved</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- PROGRAMS with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="programs.html">Programs</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="summer-camp.html">Summer Sports Camp</a></li>
+                            <li><a href="camp-highlights.html">Camp Highlights</a></li>
+                            <li><a href="camp-activities.html">Camp Activities</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- SPORTS with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="sports.html">Sports</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="goalball.html">Goalball</a></li>
+                            <li><a href="wrestling.html">Wrestling</a></li>
+                            <li><a href="swimming.html">Swimming</a></li>
+                            <li><a href="track-field.html">Track & Field</a></li>
+                            <li><a href="disc-golf.html">Disc Golf</a></li>
+                            <li><a href="archery.html">Archery</a></li>
+                            <li><a href="rock-climbing.html">Rock Climbing</a></li>
+                            <li><a href="tandem-biking.html">Tandem Biking</a></li>
+                            <li><a href="soccer-kickball.html">Soccer & Kickball</a></li>
+                            <li><a href="yoga-fitness.html">Yoga & Fitness</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- NEWS with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="news.html">News</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="summer-camp.html">2026 Summer Camp</a></li>
+                            <li><a href="camp-2025-review.html">2025 Camp Review</a></li>
+                            <li><a href="awards-2025.html">2025 Award Winners</a></li>
+                            <li><a href="photos-2024.html">2024 Camp Photos</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- PHOTO GALLERY with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="photo-gallery.html" aria-current="page">Photo Gallery</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="photo-gallery.html" aria-current="page">2026 Camp Photos</a></li>
+                            <li><a href="photos-2024.html">2024 Camp Photos</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- GET INVOLVED with dropdown -->
+                    <li class="has-dropdown">
+                        <a href="getinvolved.html">Get Involved</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="getinvolved.html#athletes">Athletes</a></li>
+                            <li><a href="getinvolved.html#volunteers">Volunteers</a></li>
+                            <li><a href="getinvolved.html#donors">Donors & Supporters</a></li>
+                            <li><a href="getinvolved.html#partners">Organizations & Partners</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="getinvolved.html#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Site Search -->
+            <div class="site-search" role="search">
+                <form id="site-search-form" aria-label="Site Search">
+                    <label for="site-search-input" class="screen-reader-text">Search the site</label>
+                    <input type="search" id="site-search-input" name="q" placeholder="Search site..." aria-label="Search query" autocomplete="off">
+                    <button type="submit" id="site-search-button" aria-label="Search"><span aria-hidden="true">🔍</span></button>
+                </form>
+            </div>
+
+            <!-- Theme Selector -->
+            <div class="theme-selector-wrapper" role="region" aria-label="Display Settings">
+                <label for="theme-selector" class="theme-label" title="Display settings: colors and accessibility options">
+                    Accessibility Options:
+                </label>
+                <select id="theme-selector" aria-label="Choose display theme and accessibility options">
+                    <option value="red">Default</option>
+                    <option value="highContrast">High Contrast</option>
+                    <option value="inverted">Inverted (Dark Mode)</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <div class="container">
+            <div class="page-header">
+                <h1>Photo Gallery</h1>
+            </div>
+
+            <p class="lead">Browse photos from our Summer Sports Camps. Click any photo to view it full size.</p>
+
+            <nav class="gallery-year-nav" aria-label="Gallery year selection">
+                <a href="photo-gallery.html" class="active">2026 Camp Photos</a>
+                <a href="photos-2024.html">2024 Camp Photos</a>
+            </nav>
+
+            <!-- Group Photo -->
+            <section class="gallery-section" aria-labelledby="section-group">
+                <h2 id="section-group">2026 Group Photo</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: 2026 Group Photo" data-src="images/2026/group-photo-2026.jpeg" data-caption="2026 Group Photo">
+                        <img src="images/2026/group-photo-2026.jpeg" alt="2026 Group Photo" loading="lazy">
+                        <span class="gallery-label">2026 Group Photo</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Goalball -->
+            <section class="gallery-section" aria-labelledby="section-goalball">
+                <h2 id="section-goalball">Goalball</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Goalball - Ball Rolling" data-src="images/2026/goalball-ball-rolling-1.jpeg" data-caption="Goalball - Ball Rolling">
+                        <img src="images/2026/goalball-ball-rolling-1.jpeg" alt="Goalball - ball rolling" loading="lazy">
+                        <span class="gallery-label">Goalball - Ball Rolling</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Goalball - Ball Rolling" data-src="images/2026/goalball-ball-rolling-2.png" data-caption="Goalball - Ball Rolling">
+                        <img src="images/2026/goalball-ball-rolling-2.png" alt="Goalball - ball rolling" loading="lazy">
+                        <span class="gallery-label">Goalball - Ball Rolling</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Goalball - Blocking" data-src="images/2026/goalball-blocking.jpeg" data-caption="Goalball - Blocking">
+                        <img src="images/2026/goalball-blocking.jpeg" alt="Goalball - blocking" loading="lazy">
+                        <span class="gallery-label">Goalball - Blocking</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Goalball Action" data-src="images/2026/goalball-action.png" data-caption="Goalball Action">
+                        <img src="images/2026/goalball-action.png" alt="Goalball action" loading="lazy">
+                        <span class="gallery-label">Goalball Action</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Exploring Goalball Court Lines" data-src="images/2026/goalball-court-lines.jpeg" data-caption="Exploring Goalball Court Lines">
+                        <img src="images/2026/goalball-court-lines.jpeg" alt="Exploring goalball court lines" loading="lazy">
+                        <span class="gallery-label">Exploring Goalball Court Lines</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rock Climbing -->
+            <section class="gallery-section" aria-labelledby="section-rock-climb">
+                <h2 id="section-rock-climb">Rock Climbing</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Rock Climbing 2026" data-src="images/2026/rock-climb-2026-2.jpeg" data-caption="Rock Climbing 2026">
+                        <img src="images/2026/rock-climb-2026-2.jpeg" alt="Rock climbing 2026" loading="lazy">
+                        <span class="gallery-label">Rock Climbing 2026</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Rock Climbing - At the Top" data-src="images/2026/rock-climb-top.png" data-caption="Rock Climbing - At the Top">
+                        <img src="images/2026/rock-climb-top.png" alt="Rock climbing - athlete at the top" loading="lazy">
+                        <span class="gallery-label">Rock Climbing - At the Top</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skateboarding -->
+            <section class="gallery-section" aria-labelledby="section-skateboard">
+                <h2 id="section-skateboard">Skateboarding</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Skateboarding - Four Athletes" data-src="images/2026/skateboard-4-boys.png" data-caption="Skateboarding">
+                        <img src="images/2026/skateboard-4-boys.png" alt="Skateboarding - four athletes" loading="lazy">
+                        <span class="gallery-label">Skateboarding</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Skateboarding - Boys and Girls" data-src="images/2026/skateboard-boys-girls.png" data-caption="Skateboarding">
+                        <img src="images/2026/skateboard-boys-girls.png" alt="Skateboarding - boys and girls" loading="lazy">
+                        <span class="gallery-label">Skateboarding</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Skateboarding" data-src="images/2026/skateboard-boys-k.png" data-caption="Skateboarding">
+                        <img src="images/2026/skateboard-boys-k.png" alt="Skateboarding" loading="lazy">
+                        <span class="gallery-label">Skateboarding</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Skateboarding" data-src="images/2026/skateboard-h.png" data-caption="Skateboarding">
+                        <img src="images/2026/skateboard-h.png" alt="Skateboarding" loading="lazy">
+                        <span class="gallery-label">Skateboarding</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Skateboarding" data-src="images/2026/skateboard-j.jpeg" data-caption="Skateboarding">
+                        <img src="images/2026/skateboard-j.jpeg" alt="Skateboarding" loading="lazy">
+                        <span class="gallery-label">Skateboarding</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Skateboarding" data-src="images/2026/skateboard-ro.jpeg" data-caption="Skateboarding">
+                        <img src="images/2026/skateboard-ro.jpeg" alt="Skateboarding" loading="lazy">
+                        <span class="gallery-label">Skateboarding</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Skateboarding" data-src="images/2026/skateboard-t-a.png" data-caption="Skateboarding">
+                        <img src="images/2026/skateboard-t-a.png" alt="Skateboarding" loading="lazy">
+                        <span class="gallery-label">Skateboarding</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Skateboarding" data-src="images/2026/skateboard-t-g.jpeg" data-caption="Skateboarding">
+                        <img src="images/2026/skateboard-t-g.jpeg" alt="Skateboarding" loading="lazy">
+                        <span class="gallery-label">Skateboarding</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Track & Field -->
+            <section class="gallery-section" aria-labelledby="section-track">
+                <h2 id="section-track">Track &amp; Field</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Running on Track" data-src="images/2026/running-on-track.png" data-caption="Running on Track">
+                        <img src="images/2026/running-on-track.png" alt="Running on track" loading="lazy">
+                        <span class="gallery-label">Running on Track</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Track - Starting Line" data-src="images/2026/track-starting-line.png" data-caption="Track - Starting Line">
+                        <img src="images/2026/track-starting-line.png" alt="Track starting line" loading="lazy">
+                        <span class="gallery-label">Track - Starting Line</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Track - Warm-ups" data-src="images/2026/track-warm-ups.png" data-caption="Track - Warm-ups">
+                        <img src="images/2026/track-warm-ups.png" alt="Track warm-ups" loading="lazy">
+                        <span class="gallery-label">Track - Warm-ups</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Shot Put" data-src="images/2026/shot-put.png" data-caption="Shot Put">
+                        <img src="images/2026/shot-put.png" alt="Shot put" loading="lazy">
+                        <span class="gallery-label">Shot Put</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Throw" data-src="images/2026/throw-wh.png" data-caption="Throw">
+                        <img src="images/2026/throw-wh.png" alt="Athlete throwing" loading="lazy">
+                        <span class="gallery-label">Throw</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Wrestling -->
+            <section class="gallery-section" aria-labelledby="section-wrestling">
+                <h2 id="section-wrestling">Wrestling</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Wrestling 2026" data-src="images/2026/wrestling-2026.jpg" data-caption="Wrestling 2026">
+                        <img src="images/2026/wrestling-2026.jpg" alt="Wrestling 2026" loading="lazy">
+                        <span class="gallery-label">Wrestling 2026</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Wrestling Instruction" data-src="images/2026/wrestling-instruction.jpeg" data-caption="Wrestling Instruction">
+                        <img src="images/2026/wrestling-instruction.jpeg" alt="Wrestling instruction" loading="lazy">
+                        <span class="gallery-label">Wrestling Instruction</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sighted Guide Training -->
+            <section class="gallery-section" aria-labelledby="section-guide">
+                <h2 id="section-guide">Sighted Guide Training</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Sighted Guide / Blindfold Training" data-src="images/2026/sighted-guide-training.png" data-caption="Sighted Guide / Blindfold Training">
+                        <img src="images/2026/sighted-guide-training.png" alt="Sighted guide blindfold training" loading="lazy">
+                        <span class="gallery-label">Sighted Guide / Blindfold Training</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Beep Kickball -->
+            <section class="gallery-section" aria-labelledby="section-kickball">
+                <h2 id="section-kickball">Beep Kickball</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Beep Kickball" data-src="images/2026/beep-kickball.png" data-caption="Beep Kickball">
+                        <img src="images/2026/beep-kickball.png" alt="Beep kickball" loading="lazy">
+                        <span class="gallery-label">Beep Kickball</span>
+                    </div>
+                    <div class="gallery-item" role="button" tabindex="0" aria-label="View: Athletes Ready" data-src="images/2026/ready-athletes.png" data-caption="Athletes Ready">
+                        <img src="images/2026/ready-athletes.png" alt="Athletes ready" loading="lazy">
+                        <span class="gallery-label">Athletes Ready</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+        <button id="lightbox-close" aria-label="Close photo viewer">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+        <p id="lightbox-caption"></p>
+    </div>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2026 MOBALE - Maine Organization for Blind Athletic and Leadership Education. All rights reserved.</p>
+            <p>Empowering youth with visual impairments through sports and leadership education.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+    <script src="theme-switcher.js"></script>
+    <script>
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        const lbCaption = document.getElementById('lightbox-caption');
+        const lbClose = document.getElementById('lightbox-close');
+
+        function openLightbox(src, caption, alt) {
+            lbImg.src = src;
+            lbImg.alt = alt || caption;
+            lbCaption.textContent = caption;
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            lbClose.focus();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = '';
+            lbImg.src = '';
+        }
+
+        document.querySelectorAll('.gallery-item').forEach(function(item) {
+            function trigger() {
+                openLightbox(item.dataset.src, item.dataset.caption, item.querySelector('img').alt);
+            }
+            item.addEventListener('click', trigger);
+            item.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(); }
+            });
+        });
+
+        lbClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+        });
+    </script>
+</body>
+</html>
